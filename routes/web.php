@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\ChartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,5 @@ use App\Http\Controllers\DataController;
 
 Route::get('data', [DataController::class, 'index']);
 Route::get('data/list', [DataController::class, 'getData'])->name('data.list');
-Route::get('data/getProvider',[DataController::class, 'getChartDownload']);
+Route::get('/charts', [ChartController::class, 'index'])->name('charts');
+Route::post('/charts', 'ChartController@index');

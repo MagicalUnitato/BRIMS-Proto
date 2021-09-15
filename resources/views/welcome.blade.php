@@ -19,6 +19,7 @@
                     <th>Download</th>
                     <th>Longitude</th>
                     <th>Latitude</th>
+                    <!-- add tier pricing !-->
                     <th>Date Created</th>
                     <th>Time Created</th>
                 </tr>
@@ -27,26 +28,6 @@
             </tbody>
         </table>
     </div>
-    <div class="container mt-5">
-        <h2 class="mb-4">Charts</h2>
-        <form action="{{url('data/getProvider')}}" method="get">
-            {{csrf_field()}}
-             <div class="form-group">
-               <label for="stockPrice">Service Provider:</label>
-               <select class="selectpicker" name="serviceProvider">
-                  <option value="DITO">DITO</option>
-                  <option value="SMART">SMART</option>
-                  <option value="GLOBE">GLOBE</option>
-                  <option value="PLDT">PLDT</option>
-                  <option value="CONVERGE">CONVERGE</option>
-              </select>
-            </div>
-             <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        <div>
-            <canvas id="averageDay"></canvas>
-        </div>
-    </div>  
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>  
@@ -75,8 +56,5 @@
     });
     
   });
-</script>
-<script type="text/javascript">
-
 </script>
 </html>
