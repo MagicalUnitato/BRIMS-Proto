@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\ChartController;
+use App\Http\Controllers\ChartFormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,9 @@ use App\Http\Controllers\ChartController;
 */
 
 Route::get('data', [DataController::class, 'index']);
+
 Route::get('data/list', [DataController::class, 'getData'])->name('data.list');
+
 Route::get('/charts', [ChartController::class, 'index'])->name('charts');
-Route::post('/charts', 'ChartController@index');
+
+Route::post('sendForm', [ChartController::class, 'chartForm']);
